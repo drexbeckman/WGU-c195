@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.AppointmentsViewController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="600.0" prefWidth="1170.0">
+         <children>
+            <HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="535.0" prefWidth="900.0">
+               <children>
+                  <TableView fx:id="apptTable" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="533.0" prefWidth="1171.0">
+                    <columns>
+                      <TableColumn fx:id="apptIDCol" prefWidth="90.0" text="Appt. ID" />
+                      <TableColumn fx:id="titleCol" prefWidth="150.0" text="Title" />
+                        <TableColumn fx:id="descCol" prefWidth="150.0" text="Description" />
+                        <TableColumn fx:id="locationCol" prefWidth="150.0" text="Location" />
+                        <TableColumn fx:id="contactCol" prefWidth="90.0" text="Contact ID" />
+                        <TableColumn fx:id="typeCol" prefWidth="150.0" text="Type" />
+                        <TableColumn fx:id="startCol" prefWidth="150.0" text="Start" />
+                        <TableColumn fx:id="endCol" minWidth="0.0" prefWidth="150.0" text="End" />
+                        <TableColumn fx:id="custIDCol" prefWidth="90.0" text="Customer ID" />
+                    </columns>
+                  </TableView>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="216.0" prefWidth="600.0">
+               <children>
+                  <Label text="Filter By">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <RadioButton fx:id="allBtn" mnemonicParsing="false" onAction="#allBtnSelected" selected="true" text="All">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="filterBtns" />
+                     </toggleGroup>
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="monthBtn" mnemonicParsing="false" onAction="#monthBtnSelected" text="Month" toggleGroup="$filterBtns">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="weekBtn" mnemonicParsing="false" onAction="#weekBtnSelected" text="Week" toggleGroup="$filterBtns">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <Button mnemonicParsing="false" onAction="#addBtnPressed" prefHeight="27.0" prefWidth="59.0" text="Add">
+                     <HBox.margin>
+                        <Insets left="50.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#updateBtnPressed" text="Update">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#deleteBtnPressed" prefHeight="27.0" prefWidth="59.0" text="Delete">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#backBtnPressed" prefHeight="27.0" prefWidth="59.0" text="Back">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
